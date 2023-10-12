@@ -1,17 +1,13 @@
 import Image from "next/image";
-import { useRef } from "react";
 import cobaSekarangButton from "../../public/coba-sekarang-btn.png";
 import Link from "next/link";
 
 const Card = ({ name, image, desc, link, video, isExpanded, onClick }) => {
-  const expandedCardRef = useRef(null);
-  // console.log(expandedCardRef.current?.offsetHeight);
-  // console.log({expandedCardRef});
-
   return (
-    <button
+    <a
+      id={name}
       onClick={onClick}
-      ref={isExpanded ? expandedCardRef : null}
+      href={`#${name}`}
       className={`w-[40%] ${isExpanded ? "w-[80vw] md:w-[50%]" : "md:w-[23%]"}`}
     >
       <div
@@ -87,8 +83,7 @@ const Card = ({ name, image, desc, link, video, isExpanded, onClick }) => {
           </Link>
         </div>
       </div>
-    </button>
-    // `md:relative md:mt-[${expandedCardRef.current?.offsetHeight}]`
+    </a>
   );
 };
 
