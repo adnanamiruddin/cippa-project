@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getAllItems, getAllTagsName, getItemsByTag } from "@/api/service";
 import Card from "@/components/Card";
 import { useRouter, useSearchParams } from "next/navigation";
-import { FiSearch } from "react-icons/fi";
+import { FiSearch, FiX } from "react-icons/fi";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
@@ -11,23 +11,33 @@ export default function Tools() {
   const [items, setItems] = useState(data);
   const [expandedCard, setExpandedCard] = useState(null);
 
+  const router = useRouter();
   const searchParams = useSearchParams();
   const defaultKeyword = searchParams.get("cari");
+  const [inputValue, setInputValue] = useState("");
 
   const [tagsName, setTagsName] = useState([]);
   const [selectedTags, setSelectedTags] = useState("Semua");
 
-  const router = useRouter();
+  const handleCardClick = (index) => {
+    setExpandedCard(index === expandedCard ? null : index);
+  };
 
   const onKeywordChangeHandler = (cari) => {
+    setInputValue(cari);
     router.push({
       pathname: router.pathname,
       query: { ...router.query, cari },
     });
   };
 
-  const handleCardClick = (index) => {
-    setExpandedCard(index === expandedCard ? null : index);
+  const clearInput = () => {
+    setInputValue("");
+    setSelectedTags("Semua");
+    router.push({
+      pathname: router.pathname,
+      query: { ...router.query, cari: "" },
+    });
   };
 
   useEffect(() => {
@@ -61,16 +71,14 @@ export default function Tools() {
       setItems(searchResult);
     }
 
-    if (defaultKeyword === "") {
+    if (defaultKeyword === "" || defaultKeyword?.length <= 3) {
       setSelectedTags("Semua");
-      setItems(data);
     }
   }, [defaultKeyword]);
 
   useEffect(() => {
     if (selectedTags === "Semua") {
       setItems(data);
-      return;
     } else if (selectedTags) {
       const getTagsForChoosenTag = async () => {
         const itemsForTag = await getItemsByTag(selectedTags);
@@ -80,7 +88,7 @@ export default function Tools() {
     } else {
       setItems(data);
     }
-  }, [selectedTags]);
+  }, [selectedTags, data]);
 
   return (
     <div className="bg-black min-h-screen">
@@ -89,15 +97,19 @@ export default function Tools() {
         <div className="flex justify-center items-center px-4 relative md:px-0">
           <input
             type="text"
+            value={inputValue}
             onChange={(e) => onKeywordChangeHandler(e.target.value)}
             placeholder="Cari tools yang sesuai"
             className="bg-black text-gray-300 border-[0.7px] pl-10 py-2 rounded-l-2xl w-5/6 md:w-11/12"
           />
           <FiSearch className="absolute left-[8%] top-[32%] text-white md:left-[1.5%]" />
 
-          <div className="bg-[#D2FF3A] rounded-r-2xl w-1/6 flex justify-center items-center h-full py-[0.8rem] text-black md:w-1/12">
-            <FiSearch />
-          </div>
+          <button
+            onClick={clearInput}
+            className="bg-[#D2FF3A] rounded-r-2xl w-1/6 flex justify-center items-center h-full py-[0.8rem] font-bold text-black md:w-1/12 hover:brightness-75"
+          >
+            <FiX />
+          </button>
         </div>
 
         <div className="flex py-4 overflow-scroll gap-1 px-4 md:px-0">

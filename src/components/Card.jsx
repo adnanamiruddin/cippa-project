@@ -66,7 +66,7 @@ const Card = ({ name, image, desc, link, video, isExpanded, onClick }) => {
           {/* Desktop View */}
           <p
             className={`hidden md:inline-block text-gray-400 text-sm ${
-              isExpanded ? "text-justify mt-6" : "text-base text-left mt-4 h-12"
+              isExpanded ? "text-justify mt-6" : "text-base text-left mt-4 h-16"
             }`}
           >
             {isExpanded ? desc : desc.slice(0, 50) + "..."}
