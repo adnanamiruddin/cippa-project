@@ -14,10 +14,20 @@ const HomeCards = () => {
           kerja mereka dan membuka pintu efisiensi yang baru
         </p>
         <div className="mt-6 flex justify-between gap-4">
-          <Link href="" className="border-2 py-2 px-7 rounded-full w-1/2 flex justify-center items-center">
+          <Link
+            href="https://bard.google.com/chat"
+            target="_blank"
+            rel="noopener"
+            className="border-2 py-2 px-7 rounded-full w-1/2 flex justify-center items-center"
+          >
             <Image src={bardAiText} alt="" />
           </Link>
-          <Link href="" className="border-2 py-2 px-7 rounded-full w-1/2 flex justify-center items-center">
+          <Link
+            href="https://chat.openai.com/"
+            target="_blank"
+            rel="noopener"
+            className="border-2 py-2 px-7 rounded-full w-1/2 flex justify-center items-center"
+          >
             <Image src={chatGptText} alt="" />
           </Link>
         </div>
