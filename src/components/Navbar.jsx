@@ -50,7 +50,7 @@ const Navbar = () => {
             target="_blank"
             rel="noopener"
             className={`mt-4 bg-[#D2FF3A] text-black font-bold p-2 rounded-md flex justify-evenly items-center text-sm duration-500 ${
-              showCommunity ? "opacity-100" : "opacity-0 pointer-events-none"
+              showCommunity ? "opacity-100" : "opacity-0 pointer-events-none hidden"
             }`}
           >
             Bergabung ke Komunitas
