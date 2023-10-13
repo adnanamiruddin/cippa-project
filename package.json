@@ -1,5 +1,5 @@
 {
-  "name": "butuh-ai-project2",
+  "name": "cippa",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.38.0",
+    "framer-motion": "^10.16.4",
     "next": "13.5.4",
     "react": "^18",
     "react-dom": "^18",
