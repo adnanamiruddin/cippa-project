@@ -1,6 +1,7 @@
 import Image from "next/image";
 import cobaSekarangButton from "../../public/coba-sekarang-btn.png";
 import Link from "next/link";
+import { RxArrowTopRight } from "react-icons/rx";
 
 const Card = ({ name, image, desc, link, video, isExpanded, onClick }) => {
   return (
@@ -75,11 +76,11 @@ const Card = ({ name, image, desc, link, video, isExpanded, onClick }) => {
             href={`${link}`}
             target="_blank"
             rel="noopener"
-            className={`self-center mt-4 z-30 md:mt-2 ${
+            className={`rounded-lg bg-[#D2FF3A] self-center mt-4 z-30 text-black font-medium flex justify-center items-center gap-0.5 py-1 text-xs md:text-lg md:py-3 md:font-semibold md:mt-2 ${
               isExpanded ? "w-full md:w-3/6" : "w-[120%] md:w-full"
             }`}
           >
-            <Image src={cobaSekarangButton} alt="" className="w-full" />
+            Coba Sekarang <RxArrowTopRight className="mt-1" />
           </Link>
         </div>
       </div>

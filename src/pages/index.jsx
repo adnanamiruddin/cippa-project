@@ -11,7 +11,7 @@ import HomeCards from "@/components/HomeCards";
 import HomeScores from "@/components/HomeScores";
 import Navbar from "@/components/Navbar";
 import { FiArrowUpRight } from "react-icons/fi";
-import { useAnimation, useInView, motion } from "framer-motion";
+import { useAnimation, useInView } from "framer-motion";
 import MotionDiv from "@/components/MotionDiv";
 
 export default function Home() {
