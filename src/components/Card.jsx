@@ -1,5 +1,4 @@
 import Image from "next/image";
-import cobaSekarangButton from "../../public/coba-sekarang-btn.png";
 import Link from "next/link";
 import { RxArrowTopRight } from "react-icons/rx";
 
@@ -80,7 +79,8 @@ const Card = ({ name, image, desc, link, video, isExpanded, onClick }) => {
               isExpanded ? "w-full md:w-3/6" : "w-[120%] md:w-full"
             }`}
           >
-            Coba Sekarang <RxArrowTopRight className="mt-1" />
+            Coba Sekarang
+            <RxArrowTopRight className="mt-1 text-base md:mt-1.5 md:text-xl" />
           </Link>
         </div>
       </div>
