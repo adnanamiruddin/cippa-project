@@ -50,7 +50,7 @@ export default function Home() {
       </div>
 
       <div className="px-5 mt-12 flex flex-col justify-center items-center gap-8 md:mt-28 md:flex-row md:gap-0 md:px-16">
-        <MotionDiv x={-100} delay={0.85}>
+        <MotionDiv x={-100} delay={0.85} optionalStyling={'md:w-[175%]'}>
           <Image src={heroImage} alt="" />
         </MotionDiv>
         {/* Mobile View */}
