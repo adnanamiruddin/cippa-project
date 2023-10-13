@@ -18,13 +18,13 @@ const HomeScores = () => {
         Bergabunglah bersama kami
       </h3>
       <div className="flex justify-center flex-col gap-4 relative z-10 flex-wrap md:flex-row md:justify-between md:mt-8">
-        <MotionDiv x={100}>
+        <MotionDiv x={100} optionalStyling={'md:w-[32%]'}>
           <Image src={icon200} alt="" />
         </MotionDiv>
-        <MotionDiv x={-100} delay={0.5}>
+        <MotionDiv x={-100} delay={0.5} optionalStyling={'md:w-[32%]'}>
           <Image src={icon300} alt="" />
         </MotionDiv>
-        <MotionDiv x={100} delay={0.75}>
+        <MotionDiv x={100} delay={0.75} optionalStyling={'md:w-[32%]'}>
           <Image src={icon1000} alt="" />
         </MotionDiv>
       </div>

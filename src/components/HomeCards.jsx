@@ -8,7 +8,7 @@ import MotionDiv from "./MotionDiv";
 const HomeCards = () => {
   return (
     <div className="flex justify-center items-center flex-col gap-5 md:flex-row">
-      <MotionDiv x={100}>
+      <MotionDiv x={-100} delay={0.6}>
         <div className="bg-stone-900 p-8 rounded-lg md:h-72">
           <h3 className="text-2xl">Filterisasi dan Temukan Tools yang tepat</h3>
           <p className="mt-6">
@@ -36,7 +36,7 @@ const HomeCards = () => {
         </div>
       </MotionDiv>
 
-      <MotionDiv x={-100}>
+      <MotionDiv x={100} delay={0.6}>
         <div className="bg-stone-900 p-8 rounded-lg md:h-72">
           <Image src={peopleCommunityIcon} alt="" className="w-10" />
           <h3 className="text-2xl mt-3 md:mt-5">

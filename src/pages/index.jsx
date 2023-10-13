@@ -31,14 +31,14 @@ export default function Home() {
       <Navbar />
 
       <div className="px-5 pt-20 flex justify-between items-center flex-col gap-10 md:flex-row md:pt-24 md:px-16 2xl:px-48">
-        <MotionDiv x={100}>
-          <h2 className="text-4xl md:leading-snug md:text-5xl md:w-3/6 z-10 2xl:w-2/6">
+        <MotionDiv x={-100} optionalStyling={"md:w-3/6 z-10 2xl:w-2/6"}>
+          <h2 className="text-4xl md:leading-snug md:text-5xl">
             Temukan dan Jelajahi Berbagai Tools AI
           </h2>
         </MotionDiv>
 
-        <MotionDiv x={-100} delay={0.5}>
-          <div className="w-full md:w-2/6">
+        <MotionDiv x={100} delay={0.5} optionalStyling={"md:w-2/6"}>
+          <div className="w-full">
             <p className="text-3xl">🔥😍👍</p>
             <p className="text-justify mt-6 text-sm leading-loose">
               Selamat datang di platform terpadu untuk semua kebutuhan AI Anda.
@@ -50,22 +50,28 @@ export default function Home() {
       </div>
 
       <div className="px-5 mt-12 flex flex-col justify-center items-center gap-8 md:mt-28 md:flex-row md:gap-0 md:px-16">
-        <MotionDiv x={100} delay={0.85}>
+        <MotionDiv x={-100} delay={0.85}>
           <Image src={heroImage} alt="" />
         </MotionDiv>
         {/* Mobile View */}
-        <MotionDiv y={-100} delay={1}>
+        <MotionDiv y={-100} delay={1} optionalStyling={"md:hidden"}>
           <Link
             href="/tools"
-            className="bg-lime-400 py-2 text-black font-bold rounded-md flex justify-center items-center gap-1 text-xl md:hidden w-full"
+            className="bg-lime-400 py-2 text-black font-bold rounded-md flex justify-center items-center gap-1 text-xl w-full"
           >
             Cari Tools AI <FiArrowUpRight className="mt-0.5" />
           </Link>
         </MotionDiv>
         {/* Desktop View */}
-        <Link href="/tools" className="hidden md:inline-block">
-          <Image src={heroBtnImage} alt="" />
-        </Link>
+        <MotionDiv
+          x={100}
+          delay={0.85}
+          optionalStyling={"hidden md:inline-block w-[57%]"}
+        >
+          <Link href="/tools">
+            <Image src={heroBtnImage} alt="" />
+          </Link>
+        </MotionDiv>
       </div>
 
       <MotionDiv x={-100}>
@@ -91,7 +97,7 @@ export default function Home() {
         <AutoSlider />
       </div>
 
-      <footer className="absolute w-full left-0">
+      <footer className="w-full left-0">
         <Footer />
       </footer>
     </div>
