@@ -9,7 +9,7 @@ const Navbar = () => {
   const [showCommunity, setShowCommunity] = useState(false);
 
   return (
-    <nav className="flex justify-betweens items-center fixed w-full backdrop-blur-sm z-50 p-4 md:py-4 md:px-12">
+    <nav className="flex justify-betweens items-center fixed w-full backdrop-blur-sm z-50 p-5 md:py-4 md:px-12">
       <Link href="/" className="text-xl tracking-wider md:text-3xl md:pl-4">
         <Image src={icon} alt="" width={100} height={100} />
       </Link>
@@ -49,7 +49,9 @@ const Navbar = () => {
             href="https://t.me/+D5WFvWvF8EVkMTI1"
             target="_blank"
             rel="noopener"
-            className="mt-4 bg-[#D2FF3A] text-black font-bold p-2 rounded-md flex justify-evenly items-center text-sm"
+            className={`mt-4 bg-[#D2FF3A] text-black font-bold p-2 rounded-md flex justify-evenly items-center text-sm duration-500 ${
+              showCommunity ? "opacity-100" : "opacity-0 pointer-events-none"
+            }`}
           >
             Bergabung ke Komunitas
             <LuArrowDownRight className="text-lg mt-1" />
