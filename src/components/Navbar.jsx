@@ -37,26 +37,24 @@ const Navbar = () => {
           </p>
         </button>
 
-        <div
-          className={`absolute bg-slate-900 border-2 w-72 right-[5%] top-16 p-6 rounded-md duration-500 md:right-[3.8%] ${
-            showCommunity ? "opacity-100" : "opacity-0 pointer-events-none"
-          }}`}
-        >
-          <h3 className="text-sm text-justify">
-            Gabung Komunitas dan Temukan Informasi Seputar Tools AI
-          </h3>
-          <Link
-            href="https://t.me/+D5WFvWvF8EVkMTI1"
-            target="_blank"
-            rel="noopener"
-            className={`mt-4 bg-[#D2FF3A] text-black font-bold p-2 rounded-md flex justify-evenly items-center text-sm duration-500 ${
-              showCommunity ? "opacity-100" : "opacity-0 pointer-events-none hidden"
-            }`}
-          >
-            Bergabung ke Komunitas
-            <LuArrowDownRight className="text-lg mt-1" />
-          </Link>
-        </div>
+        {showCommunity ? (
+          <div className="absolute bg-slate-900 border-2 w-72 right-[5%] top-16 p-6 rounded-md duration-500 md:right-[3.8%] ">
+            <h3 className="text-sm text-justify">
+              Gabung Komunitas dan Temukan Informasi Seputar Tools AI
+            </h3>
+            <Link
+              href="https://t.me/+D5WFvWvF8EVkMTI1"
+              target="_blank"
+              rel="noopener"
+              className="mt-4 bg-[#D2FF3A] text-black font-bold p-2 rounded-md flex justify-evenly items-center text-sm duration-500"
+            >
+              Bergabung ke Komunitas
+              <LuArrowDownRight className="text-lg mt-1" />
+            </Link>
+          </div>
+        ) : (
+          ""
+        )}
       </div>
     </nav>
   );
